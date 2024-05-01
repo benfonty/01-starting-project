@@ -1,3 +1,5 @@
+import ExpenseItem from './components/ExpenseItem'
+
 function App() {
   return (
     <div>
@@ -10,7 +12,7 @@ function App() {
         </p>
       </header>
       <main>
-        <h2>Time to get started!</h2>
+        <ExpenseItem/>
       </main>
     </div>
   );
