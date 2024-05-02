@@ -1,6 +1,28 @@
 import ExpenseItem from './components/ExpenseItem'
 
 function App() {
+  const expenses = [
+    {
+      expenseDate: new Date(2024, 5, 1),
+      title: "books",
+      amount: 23,
+      currency: "€"
+    },
+    {
+      expenseDate: new Date(2024, 5, 2),
+      title: "food",
+      amount: 15,
+      currency: "€"
+    },
+    {
+      expenseDate: new Date(2024, 4, 1),
+      title: "restaurant",
+      amount: 110,
+      currency: "€"
+    }
+  ]
+
+
   return (
     <div>
       <header>
@@ -12,7 +34,16 @@ function App() {
         </p>
       </header>
       <main>
-        <ExpenseItem/>
+        {expenses.map(
+          (expense, index) =>
+            <ExpenseItem
+              title={expense.title}
+              amount={expense.amount}
+              expenseDate={expense.expenseDate}
+              currency={expense.currency}>
+
+            </ExpenseItem>)
+        }
       </main>
     </div>
   );
